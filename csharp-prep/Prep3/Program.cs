@@ -4,7 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        
+        // To create a random number, use Random class and assign
+        // to variable
         int magicNumber = 5;
 
         // Declare variable so can be used in while loop

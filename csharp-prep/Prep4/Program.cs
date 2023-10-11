@@ -22,9 +22,31 @@ class Program
             }
         }
 
-        for (int i = 0; i < numbers.Count; i++)
+        int sum = 0;
+        foreach (int number in numbers)
         {
-            Console.WriteLine(numbers[i]);
+            sum += number;
         }
+
+        Console.WriteLine($"The sum of your numbers is {sum}.");
+
+        //Calculating the average requires sum and count of items
+        int items = numbers.Count;
+        float average = sum / items;
+
+        Console.WriteLine($"The average is {average}.");
+
+        // To get the highest number we iterate through list until
+        // we find the highest
+        foreach (int number in numbers)
+        {
+            if (number > max)
+            {
+                max = number;
+            }
+        }
+
+        Console.WriteLine($"{max} is the highest number.")
+
     }
 }

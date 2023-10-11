@@ -6,15 +6,13 @@ class Program
     {
         DisplayWelcome();
 
-        // Noticed that in including functions in Main function, ensure you list vairiables
+        // Noticed that in including functions in Main function, ensure you list variables
         // in order to avoid "Cannot use local variable before it is declared" error
         //Noticed when I put the squaredNumber variable above the userNumber variable
         string theUserName = UserName();
         int userNumber = FavoriteNumber();
         int squaredNumber = GetInteger(userNumber);
         
-         
-
         DisplayResult(theUserName, squaredNumber);
     }
 
