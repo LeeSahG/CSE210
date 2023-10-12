@@ -1,52 +1,73 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 
 class Program
 {
-
-// if selected "new entry, have prompt asking if want to save the entry"
-Console.Write("5. Quit.");
     static void Main(string[] args)
     {
-    
-    public class Choice
-    {
-        public void ShowPrompts()
+        
+        string choice = "0";
+        public List<Journal> newJournal = new List<Journal>();
+
+        while (choice != "4")
         {
-            // Display journal menu
+            //Journal Menu
+            Console.WriteLine("Welcome to your journal! What would you like to do today?");
+            Console.WriteLine("");
             Console.WriteLine("Journal Menu");
-            Console.Write("1. New Journal Entry.");
-            Console.Write("2. Display Journal.");
-            Console.Write("3. Delete Journal Entry.");
-            Console.Write("4. Save Journal Entry.");
+            Console.WriteLine("1. New Journal Entry.");
+            Console.WriteLine("2. Save Journal.");
+            Console.WriteLine("3. Display Journal Entry.");
+            Console.WriteLine("4. Quit.");
 
-            choice = Console.ReadLine();jyh7 rtvf
+            string choice = Console.ReadLine();
 
+            // Condition to add new journal entry
             if (choice == "1")
             {
-                journal.AddEntry();
+                //Display the journal prompt
+                
+                JournalPrompt journalPrompt = new JournalPrompt{};
+                journalPrompt._prompt.DisplayPrompt();
+
+                //Get the user to add an entry to the journal
+                Console.WriteLine("Your entry: ");
+                string response = Console.ReadLine();
+
+
             }
+
+            // Condition to save journal entry to file
+            else if (choice == "2")
+            {
+                
+                SaveToFile(newJournal);   
+            }
+
+            //Condition to display journal entries
+            else if (choice == "3")
+            {
+                Display(newJournal);
+            }
+
+            // User wants to exit the program, display thank you message
+            else if (choice == "4")
+            {
+                Console.WriteLine("Thank you for using the journal today!");
+
+            }
+
+            // Invalid entry, display message to user to try again
+            else ()
+            {
+                Console.WriteLine("Invalid input. Please look at the menu and try again.");
+            }
+
         }
+        
+
+
     }
 
-    public void AddEntry()
-    {
-        DateTime currentTome = DateTime.Now;
-        string dateText = currentTime
-
-        // Prompt questions for journal entry
-        List<string> questions = new List<string>();
-        questions.Add("What are you most grateful for today?");
-        questions.Add("What is your favorite moment of the day?");
-        questions.Add("Did you do something new today?");
-        questions.Add("What emotion would you like to re-visit today?");
-        questions.Add("How were you a disciple today?");
-
-        //Use of random generator to pick prompt for the day
-         Random randomGenerator = new Random();
-         int randomNumber = randomGenerator.Next(questions.Count)
-
-         
-    }
-    
-    }
 }
