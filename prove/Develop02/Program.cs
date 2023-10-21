@@ -6,68 +6,59 @@ class Program
 {
     static void Main(string[] args)
     {
-        
-        string choice = "0";
-        public List<Journal> newJournal = new List<Journal>();
+        Entry newEntry = new Entry();
+        Journal journal = new Journal();
 
-        while (choice != "4")
+        Console.WriteLine("Welcome to your journal!");
+        int choice = 0;
+
+        while (choice != 5)
         {
-            //Journal Menu
-            Console.WriteLine("Welcome to your journal! What would you like to do today?");
+
+            //Displaying journal Menu
+            Console.WriteLine("");
+            Console.WriteLine("What would you like to do today?");
             Console.WriteLine("");
             Console.WriteLine("Journal Menu");
             Console.WriteLine("1. New Journal Entry.");
             Console.WriteLine("2. Save Journal.");
-            Console.WriteLine("3. Display Journal Entry.");
-            Console.WriteLine("4. Quit.");
+            Console.WriteLine("3. Display Journal.");
+            Console.WriteLine("4. Load Journal.");
+            Console.WriteLine("5. Quit.");
+            Console.WriteLine(">");
+            choice = int.Parse(Console.ReadLine());
 
-            string choice = Console.ReadLine();
-
-            // Condition to add new journal entry
-            if (choice == "1")
+            // Make a journal entry
+            if (choice == 1)
             {
-                //Display the journal prompt
-                
-                JournalPrompt journalPrompt = new JournalPrompt{};
-                journalPrompt._prompt.DisplayPrompt();
-
-                //Get the user to add an entry to the journal
-                Console.WriteLine("Your entry: ");
-                string response = Console.ReadLine();
-
-
+                newEntry.NewEntry();
             }
 
-            // Condition to save journal entry to file
-            else if (choice == "2")
+            // Save journal to file
+            else if (choice == 2)
             {
-                
-                SaveToFile(newJournal);   
+                journal.SaveToFile();
             }
 
-            //Condition to display journal entries
-            else if (choice == "3")
+            else if (choice == 3)
             {
-                Display(newJournal);
+                journal.DisplayJournal();
             }
 
-            // User wants to exit the program, display thank you message
-            else if (choice == "4")
+            else if (choice == 4)
             {
-                Console.WriteLine("Thank you for using the journal today!");
-
+                journal.LoadFile();
             }
 
-            // Invalid entry, display message to user to try again
-            else ()
+            else if (choice == 5)
             {
-                Console.WriteLine("Invalid input. Please look at the menu and try again.");
+                Console.WriteLine("Thank you for your inout today. Hope to hear from you again.");
             }
-
         }
-        
-
-
     }
 
+
+        
+
+    
 }

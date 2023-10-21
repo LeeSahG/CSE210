@@ -48,7 +48,7 @@ class Program
     static void DisplayResult(string userName, int square)
     {
         Console.WriteLine($"{userName}, the square of your number is {square}.");
-    }
+    } 
 }
     
 
